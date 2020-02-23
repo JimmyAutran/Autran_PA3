@@ -1,4 +1,7 @@
 public class SavingsAccount {
+
+	
+	//static int annualInterestRate=0;
 	
 	private static int annualInterestRate = 0;
 	
@@ -6,6 +9,8 @@ public class SavingsAccount {
 	
 	private double monthlyInterest;
 
+	
+	
 	
 	public double getSavingsBalance() {
 		return savingsBalance;
@@ -16,14 +21,16 @@ public class SavingsAccount {
 		
 	}
 
-	public void modifyInterestRate(int r) {
+	public void modifyInterestRate(int r)
+	{
 		annualInterestRate=r;
 	}
 	
-	public void calculateMonthlyInterest(){
-		
+	public void calculateMonthlyInterest()
+	{
 	monthlyInterest=(float)(savingsBalance * (float)annualInterestRate/100)/12;
 	savingsBalance=savingsBalance+monthlyInterest;
 	}
+	
 	
 }
