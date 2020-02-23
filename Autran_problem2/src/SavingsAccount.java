@@ -1,0 +1,36 @@
+public class SavingsAccount {
+
+	
+	//static int annualInterestRate=0;
+	
+	private static int annualInterestRate = 0;
+	
+	private double savingsBalance;
+	
+	private double monthlyInterest;
+
+	
+	
+	
+	public double getSavingsBalance() {
+		return savingsBalance;
+	}
+
+	public SavingsAccount(double savingsBalance) {
+		this.savingsBalance = savingsBalance;
+		
+	}
+
+	public void modifyInterestRate(int r)
+	{
+		annualInterestRate=r;
+	}
+	
+	public void calculateMonthlyInterest()
+	{
+	monthlyInterest=(float)(savingsBalance * (float)annualInterestRate/100)/12;
+	savingsBalance=savingsBalance+monthlyInterest;
+	}
+	
+	
+}

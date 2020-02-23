@@ -1,0 +1,159 @@
+import java.security.SecureRandom;
+import java.util.Random;
+import java.util.Scanner;
+
+public class CAI3 {	
+
+public static void main(String[] args) {
+	CAI3 c= new CAI3();
+	c.quiz();	
+}
+
+public void quiz()
+{
+	Random rand = new SecureRandom();
+	// 0 to 9 inclusive.
+	int number1 ;	
+	int number2;	
+	
+	int correctans;
+	
+	while(true)
+	{
+	
+	int score=0;
+	for(int i=0;i<10;i++)
+	{
+		number1 = rand.nextInt(10);	
+		 number2 = rand.nextInt(10);	
+		 askQuestion( number1, number2);
+		 correctans=number1*number2;
+		if(readResponse(correctans)==true)
+			
+			{
+			score++;
+			displayCorrectResponse();
+			
+			}
+		else
+			{
+			displayInorrectResponse();
+		
+		}
+			
+		
+	}
+	
+	displayCompletionMessage(score);
+	Scanner input = new Scanner(System.in);
+	System.out.println("Do you want to try again?(y/n): ");
+	String ans=input.next();
+	if (ans.equals("n"))
+		break;
+	
+ }
+}
+
+public void askQuestion(int number1,int number2)
+{
+	System.out.println("How much is "+number1+" times "+number2+"?");
+	}
+
+public void displayCompletionMessage(int score)
+{
+	if(((float)score/10)>=0.75)
+	{
+		System.out.println("Your Result is "+((float)score/10)*100+"%");
+		System.out.println("Congratulations, you are ready to go to the next level!");
+	}
+	else
+	{
+		System.out.println("Your Result is "+((float)score/10)*100+"%");
+	System.out.println("Please ask your teacher for extra help.");	
+	}	
+	
+}
+
+public boolean readResponse(int correctans )
+{
+	Scanner input = new Scanner(System.in);
+	int ans=input.nextInt();
+	
+	
+	if( isAnswerCorrect(ans,correctans)==true)
+		return true;
+	else
+		return false;
+}
+
+public boolean isAnswerCorrect(int ans,int correctans)
+{
+	if(ans==correctans)
+	{
+	return true;	
+	}
+	else
+	{
+	return false;	
+	}
+	
+}
+
+public void displayCorrectResponse()
+{
+	Random rand = new SecureRandom();
+	// 0 to 9 inclusive.
+	int number = rand.nextInt(4);	
+	
+	if(number==0)
+	{
+		System.out.println("Very good!" );
+	}
+	else if(number==1)
+	{
+	System.out.println("Excellent!");	
+	}
+	else if(number==2)
+	{System.out.println("Nice work!");	
+		
+	}
+	else if(number==3)
+	{
+		System.out.println("Keep up the good work!");	
+	}
+
+	
+	
+}
+
+
+
+
+public void displayInorrectResponse()
+{
+	Random rand = new SecureRandom();
+	// 0 to 9 inclusive.
+	int number = rand.nextInt(4);	
+	
+	
+	if(number==0)
+	{System.out.println("No. Please try again." );	
+		
+	}
+	else if(number==1)
+	{
+		System.out.println("Wrong. Try once more.");	
+	}
+	else if(number==2)
+	{
+		System.out.println("Don’t give up!");	
+	}
+	else if(number==3)
+	{
+		System.out.println("No. Keep trying.");	
+	}
+
+	
+	
+}
+}
