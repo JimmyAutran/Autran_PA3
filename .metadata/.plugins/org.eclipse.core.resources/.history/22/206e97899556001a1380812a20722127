@@ -45,45 +45,38 @@ public void quiz(){
 				 correctans=number1-number2; 
 		 }	
 		 else if(o==4){
-			while(number2 == 0){
-				number2 = generateQuestionArgument(r);
-			}
-			askQuestion( number1, number2,o);
-
-			 correctans=number1/number2;
+			 
+			 askQuestion( number1, number2,o);
+				 correctans=number1/number2;
 		 }	
 		 
 		 else if(o==5){
 			 
 			 int mix = generateQuestionArgument(4);
-			 mix++; // add 1 (no zero range is 1 to 4)
 			 
-			 if(mix==1){
+			 if(mix==0){
 				 
 				 askQuestion( number1, number2,mix);
 				 correctans=number1+number2;
 			 }
 			 
-			 else if(mix==2){
+			 else if(mix==1){
 				 
 				 askQuestion( number1, number2,mix);
 				 correctans=number1*number2;
 			 }
 			 
-			 else if(mix==3){
+			 else if(mix==2){
 				 
 				 askQuestion( number1, number2,mix);
 				 correctans=number1-number2;
 				 
 			 }
 			 
-			 else if(mix==4){
-				 while(number2 == 0){
-					number2 = generateQuestionArgument(r);
-				}
-				askQuestion( number1, number2,mix);
-				
-				correctans=number1/number2;
+			 else if(mix==3){
+				 
+				 askQuestion( number1, number2,mix);
+				 correctans=number1/number2;
 			 }
 
 		 }	
@@ -286,3 +279,36 @@ public void displayInorrectResponse(){
 	
 	}
 }		
+/*if(number==0)
+	{
+		System.out.println("Very good!" );
+	}
+	else if(number==1)
+	{
+	System.out.println("Excellent!");	
+	}
+	else if(number==2)
+	{System.out.println("Nice work!");	
+		
+	}
+	else if(number==3)
+	{
+		System.out.println("Keep up the good work!");	
+	}*/
+
+/*if(number==0)
+	{System.out.println("No. Please try again." );	
+		
+	}
+	else if(number==1)
+	{
+		System.out.println("Wrong. Try once more.");	
+	}
+	else if(number==2)
+	{
+		System.out.println("Don’t give up!");	
+	}
+	else if(number==3)
+	{
+		System.out.println("No. Keep trying.");	
+	}*/
